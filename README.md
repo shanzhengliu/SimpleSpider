@@ -1,10 +1,10 @@
-#SimpleSpider Instruction
+# SimpleSpider Instruction
 This is a module to help you use network spider easier.
-##How to install 
+## How to install 
 
 ```pip install SimpleSpider```
 
-##Using in command
+## Using in command
 There are 7 argument when you use in the command.
 
 | argument | type |default|desctipyion|
@@ -16,6 +16,8 @@ single|bool|True|If you want to use script to get the content from series of pag
 |index|str|default|use "," to spite the index, eg --index  1,2,3,4,5,6,7
 |print|bool|True| if you dont want to print out it in the console,set it as False
 |output|str|None| if you want to export your result, use it to set the path,eg: --output "D:/data.xlsx."
+
+## How to use in your code
 
 Example 1:
 get the data with Regular Expression from single Page.
