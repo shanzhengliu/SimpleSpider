@@ -9,8 +9,8 @@ single|bool|True|If you want to use script to get the content from series of pag
 |re|str|None|Regular Expression setting use,dont forget to use "" ,eg: --re "ab*c"
 |xpath|str|None|Xpath setting use, dont forget to use "",eg:--xpath "//*div[0]/text()"
 |index|str|default|use "," to spite the index, eg --index  1,2,3,4,5,6,7
-|print|type=bool|True| if you dont want to print out it in the console,set it as False
-|output|type=str|None| if you want to export your result, use it to set the path,eg: --output "D:/data.xlsx."
+|print|bool|True| if you dont want to print out it in the console,set it as False
+|output|str|None| if you want to export your result, use it to set the path,eg: --output "D:/data.xlsx."
 
 Example 1:
 get the data with Regular Expression from single Page.
