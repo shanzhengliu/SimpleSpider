@@ -1,4 +1,9 @@
 #SimpleSpider Instruction
+This is a module to help you use network spider easier.
+##How to install 
+
+```pip install SimpleSpider```
+
 ##Using in command
 There are 7 argument when you use in the command.
 
@@ -30,13 +35,19 @@ output:
 
 Example 3:
 get the data with Xpath from mulitiple Page
+
+
 ```python SimpleSpider.py --url https://ent.163.com/20/0323/ --re "<title>(.*.?)</title>" --single False --index 08/F8D2BVI700038FO9.html,10/F8D8B35800038FO9.html```
 
 output:
+
+
 ```[['疫情期间还出游？网友在巴厘岛偶遇霍建华林心如_网易娱乐'], ['台湾女星刘真去世：上《康熙》走红 当郭台铭红娘_网易娱乐']]```
 
 
 
 If you want to use the function in this model,you just need to:
-```import SimpleSpider```
+
+
+```from SimpleSpider import SimpleSpider```
 
