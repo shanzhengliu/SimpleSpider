@@ -64,7 +64,8 @@ the value of result is ```['网易']```
 Example 2:
 ```List = [53,54,55,56]  ```  
 ```result = MulityPageGetByRegEx(Url="http://www.oursteps.com.au/bbs/forum.php?mod=forumdisplay&fid=", IndexList=List,RegEx="<title>(.*?.)</title>")``` 
-the value of result is ```[['生活其他 -  新足迹 - 新足迹澳洲华人生活大全'], ['证券外汇 - 新足迹澳洲华人生活大全'], ['个人理财 - 新足迹澳洲华人生活大全'], ['生意种种 - 新足迹澳洲华人生活大全']]```
+the value of result is   
+```[['生活其他 -  新足迹 - 新足迹澳洲华人生活大全'], ['证券外汇 - 新足迹澳洲华人生活大全'], ['个人理财 - 新足迹澳洲华人生活大全'], ['生意种种 - 新足迹澳洲华人生活大全']]```
 
 Xpath and Regular Expression are avaluable to be used.
 
