@@ -1,8 +1,5 @@
 # SimpleSpider Instruction
 
-## how to install
-```pip install SimpleSpider```
-=======
 This is a module to help you use network spider easier.
 ## How to install 
 
