@@ -1,5 +1,5 @@
 # SimpleSpider Instruction
-<<<<<<< HEAD
+
 ## how to install
 ```pip install SimpleSpider```
 =======
@@ -8,9 +8,8 @@ This is a module to help you use network spider easier.
 
 ```pip install SimpleSpider```
 
->>>>>>> 9bd7151777d09babd2ee2b7c9e0769bac31c9c34
 ## Using in command
-There are 7 argument when you use in the command.
+There are 8 argument when you use in the command.
 
 | argument | type |default|desctipyion|
 | --- | --- | --- |---|
@@ -97,6 +96,12 @@ if you want to know more, please visit : https://github.com/shanzhengliu/SimpleS
 
 ## How to use in your code
 
+
+If you want to use the function in this model,you just need to:
+
+
+```from SimpleSpider import SimpleSpider```
+
 Example 1:
 get the data with Regular Expression from single Page.
 ```
@@ -126,9 +131,5 @@ output:
 
 
 
-If you want to use the function in this model,you just need to:
 
 
-```from SimpleSpider import SimpleSpider```
-
->>>>>>> 9bd7151777d09babd2ee2b7c9e0769bac31c9c34
