@@ -15,7 +15,6 @@ single|bool|True|If you want to use script to get the content from series of pag
 |re|str|None|Regular Expression setting use,dont forget to use "" ,eg: --re "ab*c"
 |xpath|str|None|Xpath setting use, dont forget to use "",eg:--xpath "//*div[0]/text()"
 |index|str|default|use "," to spite the index, eg --index  1,2,3,4,5,6,7
-<<<<<<< HEAD
 |print|type=bool|True| if you dont want to print out it in the console,set it as False
 |output|type=str|None| if you want to export your result, use it to set the path,eg: --output "D:/data.xlsx."
 |mode|tpye=str|None|you can use "img", "xp" and "re" to set mode get img urls,or use xpath, or regular expression
