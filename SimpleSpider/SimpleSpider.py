@@ -271,6 +271,8 @@ def MulityPageGetMiddleStr(Url,IndexList,front,back,Header=False,Cookie=False):
         resultList.append(RegExResult)
     return resultList
 
+
+
 def MulityLinkGetMiddleStr(Url:list,front,back,Header=False,Cookie=False):
     resultList = []
     for i in Url:
@@ -436,16 +438,37 @@ def MulityLinkPostImageUrl(Url:list,Para,Header=False,Cookie=False):
     return resultList
 
 
-
+def IndexFileRead(Filename=None):
+    if(Filename==None):
+        print("exit")
+    else:
+        f = open(Filename)
+        line = f.readline()
+        data_list = []
+        while line:
+            data_list.append(line)
+            line = f.readline()
+        f.close()
+        return data_list
 
 
 #ExportFile
-def ExportFileToExcel(data:list,FlieName="data.xlsx"):
+def SinglePageExportFileToExcel(data:list,FlieName="data.xlsx"):
     f = xlwt.Workbook()
     sheet1 = f.add_sheet('table1', cell_overwrite_ok=True)
 
     for i in range(0,len(data),1):
         sheet1.write(i, 0, data[i])
+    f.save(FlieName)
+
+def MulityPageExportFileToExcel(data:list,FlieName="data.xlsx"):
+    f = xlwt.Workbook()
+    sheet1 = f.add_sheet('table1', cell_overwrite_ok=True)
+    Index=0
+    for i in data:
+        for j in  i :
+            sheet1.write(Index, 0, j)
+            Index+=1
     f.save(FlieName)
 
 import logging
@@ -470,7 +493,7 @@ if __name__ == '__main__':
                 if(args.print=="True"):
                     print(result)
                 if (args.output != None):
-                    ExportFileToExcel(result, args.output)
+                    SinglePageExportFileToExcel(result, args.output)
 
             else:
                 result=SinglePageGetByXpath(Url=args.url,Xpath=args.xpath)
@@ -478,7 +501,7 @@ if __name__ == '__main__':
                     print(result)
 
                 if(args.output!=None):
-                    ExportFileToExcel(result,args.output)
+                    SinglePageExportFileToExcel(result,args.output)
     else:
         indexlist = str(args.index).split(",")
         if (args.re != None):
@@ -487,13 +510,13 @@ if __name__ == '__main__':
             if (args.print == "True"):
                 print(result)
             if (args.output != None):
-                ExportFileToExcel(result, args.output)
+                MulityPageExportFileToExcel(result, args.output)
         else:
             result = MulityPageGetByXpath(Url=args.url, IndexList=indexlist,  Xpath=args.xpath)
             if (args.print == "True"):
                 print(result)
             if (args.output != None):
-                ExportFileToExcel(result, args.output)
+                MulityPageExportFileToExcel(result, args.output)
 
 
 

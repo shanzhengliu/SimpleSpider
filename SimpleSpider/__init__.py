@@ -13,6 +13,8 @@ def main():
     parser.add_argument('--print', type=str, default="True")
     parser.add_argument('--output',type=str, default=None )
     parser.add_argument('--image', type=str, default=None)
+    parser.add_argument('--indexfile',type=str,default=None)
+
 
 
 
@@ -23,9 +25,9 @@ def main():
                 result=SimpleSpider.SinglePageGetByRegEx(Url=args.url,RegEx=args.re)
                 if(args.print=="True"):
                     for i in result:
-                            print(i)
+                        print(i)
                 if (args.output != None):
-                    SimpleSpider.ExportFileToExcel(result, args.output)
+                    SimpleSpider.SinglePageExportFileToExcel(result, args.output)
 
         elif(args.mode=="xp"):
                 result=SimpleSpider.SinglePageGetByXpath(Url=args.url,Xpath=args.xpath)
@@ -34,7 +36,7 @@ def main():
                         print(i)
 
                 if(args.output!=None):
-                    SimpleSpider.ExportFileToExcel(result,args.output)
+                    SimpleSpider.SinglePageExportFileToExcel(result,args.output)
         elif (args.mode == "img"):
              result = SimpleSpider.SinglePageGetImageUrl(Url=args.url)
              if (args.print == "True"):
@@ -42,32 +44,39 @@ def main():
                      print(i)
 
              if (args.output != None):
-                 SimpleSpider.ExportFileToExcel(result, args.output)
+                 SimpleSpider.SinglePageExportFileToExcel(result, args.output)
         else:
             print("exit")
 
     else:
-        indexlist = str(args.index).split(",")
+        if(args.index!=None):
+            indexlist = str(args.index).split(",")
+        else:
+            indexlist = SimpleSpider.IndexFileRead(args.indexfile)
+
         if(args.mode=="re"):
             result = SimpleSpider.MulityPageGetByRegEx(Url=args.url, IndexList=indexlist, RegEx=args.re)
             if (args.print == "True"):
                 for i in result:
-                    print(i)
+                    for j in i:
+                        print(j)
             if (args.output != None):
-                SimpleSpider.ExportFileToExcel(result, args.output)
+                SimpleSpider.MulityPageExportFileToExcel(result, args.output)
         elif(args.mode=="xp"):
             result = SimpleSpider.MulityPageGetByXpath(Url=args.url, IndexList=indexlist, Xpath=args.xpath)
             if (args.print == "True"):
                 for i in result:
-                    print(i)
+                    for j in i:
+                        print(j)
             if (args.output != None):
-                SimpleSpider.ExportFileToExcel(result, args.output)
+                SimpleSpider.MulityPageExportFileToExcel(result, args.output)
         elif(args.mode=="img"):
-            result = SimpleSpider.MulityPageGetImageUrl(Url=args.url, IndexList=indexlist, Xpath=args.xpath)
+            result = SimpleSpider.MulityPageGetImageUrl(Url=args.url, IndexList=indexlist)
             if (args.print == "True"):
                 for i in result:
-                    print(i)
+                    for j in i:
+                        print(j)
             if (args.output != None):
-                SimpleSpider.ExportFileToExcel(result, args.output)
+                SimpleSpider.MulityPageExportFileToExcel(result, args.output)
         else:
             print("exit")

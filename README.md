@@ -1,16 +1,16 @@
 # SimpleSpider Instruction
-<<<<<<< HEAD
+
 ## how to install
 ```pip install SimpleSpider```
-=======
+
 This is a module to help you use network spider easier.
 ## How to install 
 
 ```pip install SimpleSpider```
 
->>>>>>> 9bd7151777d09babd2ee2b7c9e0769bac31c9c34
+
 ## Using in command
-There are 7 argument when you use in the command.
+There are 9 argument when you use in the command.
 
 | argument | type |default|desctipyion|
 | --- | --- | --- |---|
@@ -19,10 +19,10 @@ single|bool|True|If you want to use script to get the content from series of pag
 |re|str|None|Regular Expression setting use,dont forget to use "" ,eg: --re "ab*c"
 |xpath|str|None|Xpath setting use, dont forget to use "",eg:--xpath "//*div[0]/text()"
 |index|str|default|use "," to spite the index, eg --index  1,2,3,4,5,6,7
-<<<<<<< HEAD
-|print|type=bool|True| if you dont want to print out it in the console,set it as False
-|output|type=str|None| if you want to export your result, use it to set the path,eg: --output "D:/data.xlsx."
-|mode|tpye=str|None|you can use "img", "xp" and "re" to set mode get img urls,or use xpath, or regular expression
+|print|bool|True| if you dont want to print out it in the console,set it as False
+|output|str|None| if you want to export your result, use it to set the path,eg: --output "D:/data.xlsx."
+|mode|str|None|you can use "img", "xp" and "re" to set mode get img urls,or use xpath, or regular expression
+|indexfile|str|None|you can directly read the link by file
 
 Example 1:
 get the data with Regular Expression from single Page.  
@@ -48,15 +48,23 @@ output:
 ```'疫情期间还出游？网友在巴厘岛偶遇霍建华林心如_网易娱乐'```  
 ```'台湾女星刘真去世：上《康熙》走红 当郭台铭红娘_网易娱乐'```
 
-
 Example 4:
+get the data with Xpath from mulitiple Page/link
+```SimpleSpider --mode xp --url https://ent.163.com/20/0323/ --re "<title>(.*.?)</title>" --single False --indexfile data.txt```
+the indexfile should write like this:
+1.html
+2.html
+3.html
+and the url are http://example.com/test  (here is the index)
+
+Example 5:
 get the data with Xpath from single Page  
 ```SimpleSpider --mode img --url https://www.baidu.com ```
 
 output:  
 ```//www.baidu.com/img/gs.gif```
 
-If you want to use the function in this model,you just need to:
+## If you want to use the function in this model,you just need to:
 ```from SimpleSpider import SimpleSpider```
 
 there are some function for you to simply the code  
@@ -91,44 +99,7 @@ output
 ```//www.baidu.com/img/gs.gif```   
 
 if you want to know more, please visit : https://github.com/shanzhengliu/SimpleSpider
-=======
-|print|bool|True| if you dont want to print out it in the console,set it as False
-|output|str|None| if you want to export your result, use it to set the path,eg: --output "D:/data.xlsx."
-
-## How to use in your code
-
-Example 1:
-get the data with Regular Expression from single Page.
-```
-python SimpleSpider.py --url https://www.163.com --re "<title>(.*.?)</title>"
-```
-
-output:
-```['网易']```
-
-Example 2:
-get the data with Xpath from single Page
-```python SimpleSpider.py --url https://www.163.com --xpath "//title/text()"```
-
-output:
-```['网易']```
-
-Example 3:
-get the data with Xpath from mulitiple Page
-
-
-```python SimpleSpider.py --url https://ent.163.com/20/0323/ --re "<title>(.*.?)</title>" --single False --index 08/F8D2BVI700038FO9.html,10/F8D8B35800038FO9.html```
-
-output:
-
-
-```[['疫情期间还出游？网友在巴厘岛偶遇霍建华林心如_网易娱乐'], ['台湾女星刘真去世：上《康熙》走红 当郭台铭红娘_网易娱乐']]```
 
 
 
-If you want to use the function in this model,you just need to:
 
-
-```from SimpleSpider import SimpleSpider```
-
->>>>>>> 9bd7151777d09babd2ee2b7c9e0769bac31c9c34

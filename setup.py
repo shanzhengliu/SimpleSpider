@@ -5,7 +5,7 @@ with open("README.md", "r",encoding='utf-8') as fh:
 
 setuptools.setup(
     name="SimpleSpider",                                     # 包的分发名称，使用字母、数字、_、-
-    version="0.1.0",                                        # 版本号, 版本号规范：https://www.python.org/dev/peps/pep-0440/
+    version="0.1.3",                                        # 版本号, 版本号规范：https://www.python.org/dev/peps/pep-0440/
     author="shanzhengliu",                                       # 作者名字
     author_email="liushanzheng960522@outlook.com",                      # 作者邮箱
     description="easier for you to use internet spider",                            # 包的简介描述
