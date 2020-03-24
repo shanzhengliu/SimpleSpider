@@ -70,12 +70,12 @@ output:
 there are some function for you to simply the code  
 Example 1:
 
-```result = SinglePageGetByRegEx(Url=http://www.163.com,Re="<title>(.*?.)")```  
+```result = SimpleSpider.SinglePageGetByRegEx(Url=http://www.163.com,Re="<title>(.*?.)")```  
 the value of result is ```['网易']```
 
 Example 2:
 ```List = [53,54,55,56]  ```  
-```result = MulityPageGetByRegEx(Url="http://www.oursteps.com.au/bbs/forum.php?mod=forumdisplay&fid=", IndexList=List,RegEx="<title>(.*?.)</title>")``` 
+```result = SimpleSpider.MulityPageGetByRegEx(Url="http://www.oursteps.com.au/bbs/forum.php?mod=forumdisplay&fid=", IndexList=List,RegEx="<title>(.*?.)</title>")``` 
 the value of result is ```[['生活其他 -  新足迹 - 新足迹澳洲华人生活大全'], ['证券外汇 - 新足迹澳洲华人生活大全'], ['个人理财 - 新足迹澳洲华人生活大全'], ['生意种种 - 新足迹澳洲华人生活大全']]```
 
 Xpath and Regular Expression are avaluable to be used.
@@ -89,12 +89,12 @@ the html page is
 </html>  
 ```
    
-```result = SinglePageGetMiddleStr(http://www.163.com,front="<title>,back="</title>")```  
+```result = SimpleSpider.SinglePageGetMiddleStr(http://www.163.com,front="<title>,back="</title>")```  
 output  
 ```['网易']```
 
 also you can directly get the image in a page.
-```result = SinglePageGetImgUrl(http://www.baidu.com")```   
+```result = SimpleSpider.SinglePageGetImgUrl(http://www.baidu.com")```   
 output  
 ```//www.baidu.com/img/gs.gif```   
 
